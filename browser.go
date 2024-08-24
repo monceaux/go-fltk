@@ -232,6 +232,7 @@ type SelectBrowser struct {
 func NewSelectBrowser(x, y, w, h int, text ...string) *SelectBrowser {
 	b := &SelectBrowser{}
 	b.dataMap = newBrowserDataMap()
+	b.icons = make(map[int]Image)
 	initWidget(b, unsafe.Pointer(C.go_fltk_new_Select_Browser(C.int(x), C.int(y), C.int(w), C.int(h), cStringOpt(text))))
 	return b
 }
@@ -243,6 +244,7 @@ type HoldBrowser struct {
 func NewHoldBrowser(x, y, w, h int, text ...string) *HoldBrowser {
 	b := &HoldBrowser{}
 	b.dataMap = newBrowserDataMap()
+	b.icons = make(map[int]Image)
 	initWidget(b, unsafe.Pointer(C.go_fltk_new_Hold_Browser(C.int(x), C.int(y), C.int(w), C.int(h), cStringOpt(text))))
 	return b
 }
@@ -254,6 +256,7 @@ type MultiBrowser struct {
 func NewMultiBrowser(x, y, w, h int, text ...string) *MultiBrowser {
 	b := &MultiBrowser{}
 	b.dataMap = newBrowserDataMap()
+	b.icons = make(map[int]Image)
 	initWidget(b, unsafe.Pointer(C.go_fltk_new_Multi_Browser(C.int(x), C.int(y), C.int(w), C.int(h), cStringOpt(text))))
 	return b
 }
